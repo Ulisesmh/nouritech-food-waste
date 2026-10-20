@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  db:
+    image: mysql:8.0
+    container_name: nouritech_mysql
+    restart: always
+    environment:
+      MYSQL_DATABASE: food_waste_analytics
+      MYSQL_USER: sa
+      MYSQL_PASSWORD: sasa
+      MYSQL_ROOT_PASSWORD: sasa
+    ports:
+      - "3306:3306"
+    volumes:
+      - dbdata:/var/lib/mysql
+
+volumes:
+  dbdata:
